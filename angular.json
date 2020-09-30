@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Dairy"
+    }
+  },
+  "defaultProject": "Dairy",
+  "cli": {
+    "analytics": "6ae690cf-ab63-451d-a598-5670f0cdd8ca"
+  }
 }
