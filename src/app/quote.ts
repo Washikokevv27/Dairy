@@ -1,2 +1,4 @@
-export class Quote {
-}
+export class Goal {
+    id: number;
+    name: string;
+  }
