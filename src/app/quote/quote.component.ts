@@ -20,20 +20,33 @@ export class QuoteComponent implements OnInit {
       'The secret of getting ahead is getting started',
       'Mark Twaini',
       'washiko',
-      new Date(2020, 7, 20)
+       new Date(2020, 7, 20)
     ),
     new Quote(
-      3, 'The best time to plant a tree was 20 years ago. The second best time is now', 
-        'Chinese Proverb', 
-        'Washiko', 
-        new Date(2020, 6, 23)),
+      3, 
+      'The best time to plant a tree was 20 years ago. The second best time is now', 
+      'Chinese Proverb', 
+      'Washiko', 
+       new Date(2020, 6, 23)),
     new Quote(
       4,
       'Only the paranoid survive',
       'Andy Grove',
       'Washiko',
-      new Date(2020, 5, 23)
-    ),
+       new Date(2020, 5, 23)),
+    new Quote(
+      5,
+      'Don’t limit yourself. Many people limit themselves to what they think they can do. You can go as far as your mind lets you. What you believe, remember, you can achieve',
+      'Mary Kay Ash',
+      'Washiko',
+      new Date(2020, 4, 24)), 
+    new Quote(
+      6,
+      'Only the paranoid survive',
+      'Andy Grove',
+      'Washiko',
+      new Date(2020, 7, 22)),    
+    
   ];
 
   addUpVote(index) {
