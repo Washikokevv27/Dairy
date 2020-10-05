@@ -1,26 +1,84 @@
 import { Component, OnInit } from '@angular/core';
 import { Quote } from '../quote';
 
-
 @Component({
   selector: 'app-quote',
   templateUrl: './quote.component.html',
-  styleUrls: ['./quote.component.css']
+  styleUrls: ['./quote.component.css'],
 })
 export class QuoteComponent implements OnInit {
-
-  quotes:Quote[] = [
-    {id:1, name:'All our dreams can come true, if we have the courage to pursue them'},
-    {id:2,name:'The secret of getting ahead is getting started'},
-    {id:3,name:'Don’t limit yourself. Many people limit themselves to what they think they can do. You can go as far as your mind lets you. What you believe, remember, you can achieve'},
-    {id:4,name:'The best time to plant a tree was 20 years ago. The second best time is now'},
-    {id:5,name:'Only the paranoid survive'},
-    {id:6,name:'It’s hard to beat a person who never gives up'},
+  quotes: Quote[] = [
+    new Quote(
+      1,
+      'All our dreams can come true, if we have the courage to pursue them',
+      'Walt Disney',
+      'Washiko',
+      new Date(2020, 8, 23)
+    ),
+    new Quote(
+      2,
+      'The secret of getting ahead is getting started',
+      'Mark Twaini',
+      'washiko',
+      new Date(2020, 7, 20)
+    ),
+    new Quote(
+      3, 'The best time to plant a tree was 20 years ago. The second best time is now', 
+        'Chinese Proverb', 
+        'Washiko', 
+        new Date(2020, 6, 23)),
+    new Quote(
+      4,
+      'Only the paranoid survive',
+      'Andy Grove',
+      'Washiko',
+      new Date(2020, 5, 23)
+    ),
   ];
 
-  constructor() { }
-
-  ngOnInit(): void {
+  addUpVote(index) {
+    this.quotes[index].upvote++;
   }
 
+  addDownVote(index) {
+    this.quotes[index].downvote++;
+  }
+
+  toggleDetails(index) {
+    this.quotes[index].showDetails = !this.quotes[index].showDetails;
+  }
+
+  delete(deleteThis: boolean, index: number) {
+    if (deleteThis) {
+      let confirmDelete = confirm(
+        'Are you sure you want to delete this quote?'
+      );
+      if (confirmDelete) {
+        this.quotes.splice(index, 1);
+      }
+    }
+  }
+
+  highestUpVote(): Quote {
+    let highestUpVoteQuote = new Quote(0, '', '', '', new Date());
+    for (let i = 0; i < this.quotes.length; i++) {
+      if (this.quotes[i].upvote > highestUpVoteQuote.upvote) {
+        highestUpVoteQuote = this.quotes[i];
+      }
+    }
+    if (highestUpVoteQuote.upvote > 0) {
+      return highestUpVoteQuote;
+    } else{
+      return new Quote(0, '', '', '', new Date());
+    }
+  }
+
+  addNewQuote(newQuote: Quote) {
+    newQuote.id = this.quotes.length + 1;
+    this.quotes.push(newQuote);
+  }
+
+  constructor() {}
+
+  ngOnInit(): void {}
 }
