@@ -15,18 +15,18 @@
           </h5>
 
           <div class="details-button">
-            <!-- <button
+             <button
               *ngIf="!quote.showDetails"
               class="btn btn-info"
               (click)="toggleDetails(i)"
             >
               Show Details
-            </button> -->
-            <i
+            </button>
+           <!-- <i
               *ngIf="!quote.showDetails"
               class="fas fa-info-circle fa-2x"
               (click)="toggleDetails(i)"
-            ></i>
+            ></i>-->
             <button
               *ngIf="quote.showDetails"
               class="btn btn-info"
@@ -55,11 +55,11 @@
             </small>
           </div>
           <div class="like">
-            <i class="fas fa-heart" (click)="addUpVote(i)"></i>
+            <i class="fas fa-heart fa-2x mr-3" (click)="addUpVote(i)"></i>
             {{ quote.upvote }}
           </div>
           <div class="dislike">
-            <i class="fas fa-thumbs-down" (click)="addDownVote(i)"></i>
+            <i class="fas fa-thumbs-down fa-2x" (click)="addDownVote(i)"></i>
             {{ quote.downvote }}
           </div>
         </div>

@@ -1,2 +1,6 @@
-@import "~bootstrap/dist/css/bootstrap.min.css";
-@import "~font-awesome/css/font-awesome.css";
+@import "~bootstrap/dist/css/bootstrap.css";
+
+
+body{
+    background-color:rgba(244, 165, 96, 0.603);
+}

@@ -1,6 +1,7 @@
 .card-footer {
     position: relative;
     height: 7vh;
+    color: #000;
   }
   
   .card-body {
@@ -8,8 +9,8 @@
   }
   
   .card {
-    margin-bottom: 20px;
-    min-height: 40vh;
+    margin-bottom: 10px;
+    min-height: 30vh;
   }
   
   .like {
@@ -33,7 +34,7 @@
   }
   
   .details-button {
-    position: absolute;
+    position: -ms-page;
     left: 10px;
     bottom: 8px;
   }
@@ -64,4 +65,5 @@
   
   h5{
     font-size: 1em;
+    position: -ms-page;
   }
