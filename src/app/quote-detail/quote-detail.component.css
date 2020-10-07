@@ -1,5 +1,5 @@
 .delete-button {
-    position: -webkit-sticky;
+    position: initial;
     right: 100px;
     bottom: 100px;
   }
